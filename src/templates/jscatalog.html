@@ -1,0 +1,422 @@
+{% load static %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+<script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="{% static 'js/datatables.js' %}"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+  $("input[name=chk]").change(function(){
+    var max= 4;
+    if( $("input[name=chk]:checked").length == max ){
+      alert("You can only select a maximum of " + max + " checkboxes")
+        $("input[name=chk]").attr('disabled', 'disabled');
+        $("input[name=chk]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=chk]").removeAttr('disabled');
+
+    }
+})
+</script>
+
+<!-- ___________________________________bootstrap scripts_______________________________ -->
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+  <script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+    <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+
+
+
+<!-- ___________________________________Filters scripts_______________________________ -->
+
+
+
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    
+    
+    
+    
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+  <script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+    <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+<script type="text/javascript">
+  $("input[name=chk]").change(function(){
+    var max= 4;
+    if( $("input[name=chk]:checked").length == max ){
+      alert("You can only select a maximum of " + max + " checkboxes")
+        $("input[name=chk]").attr('disabled', 'disabled');
+        $("input[name=chk]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=chk]").removeAttr('disabled');
+
+    }
+})
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#customers tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="{% static 'js/datatables.js' %}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('.datatable').dataTable({
+        "sPaginationType": "bs_four_button",
+        "aLengthMenu": [[25, 50, 75,100,250,500,1000, -1], [25, 50, 75,100,250,500,1000, "All"]],
+       "pageLength": 25
+      }); 
+      $('.datatable').each(function(){
+        var datatable = $(this);
+        // SEARCH - Add the placeholder for Search and Turn this into in-line form control
+        
+        // LENGTH - Inline-Form control
+        var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
+        length_sel.addClass('form-control input-sm');
+      });
+    });
+    </script>
+
+
+
+
+<!--________ Checkbox jQuery_________ -->
+
+
+<script type="text/javascript">
+  //REGION
+
+  $("input[name=region]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=region]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //RAM
+  $("input[name=ram]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=ram]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //HARDDISKSTORAGE
+
+  $("input[name=harddisk]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=harddisk]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //PROCESSOR
+$("input[name=processor]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=processor]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+//Touch Screen Type
+
+$("input[name=touchscreen]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=touchscreen]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+//OS
+
+$("input[name=os]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=os]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+//WARRANTY
+
+$("input[name=warranty]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=warranty]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+
+
+
+
+
+$("input[name=supplier]").click(function () {
+    var showAll = true;
+    $('#customers > #myTable > tr').each(function () {
+      $('#myTable tr').not('thead tr').hide();
+    $('input[name=supplier]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+    });
+
+
+
+
+  //SCREENSIZE
+
+$("input[name=screensize]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=screensize]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+
+//TOUCHSCREENTYPE
+
+$("input[name=touchscreen]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=touchscreen]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function() {
+ $(function() {
+   $( "#slider-range, #slider-range2" ).slider({
+     range: true,
+     min: 0,
+     max: 5000000,
+     values: [ 0, 2000000 ],
+     slide: function( event, ui ) {
+       // in this function we can define what happens when a user changes the sliders
+       $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+       var table = document.getElementById("customers");
+       for (var i = 1, row; row = table.rows[i]; i++) {
+          //iterate through rows (we SKIP the first row: counter starts at 1!)
+          for (var j = 9, col; col = row.cells[j]; j++) {
+              //iterate through columns: if first column not in range: HIDE, else SHOW
+              
+              if (j == 9) {             // if first column
+                  if ($(col).html() >= ui.values[ 0 ] && $(col).html() <= ui.values[ 1 ]) {
+                      // if in interval
+                      $(row).show();
+                  } else {
+                      $(row).hide();
+                  }
+              }
+          }  
+       }          
+     }
+   });
+     
+   $( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) +
+     " - " + $( "#slider-range" ).slider( "values", 1 ) );
+ });
+});</script>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+</script>  

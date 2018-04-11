@@ -1,0 +1,143 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- <title>Suhasini Textile Agency</title> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <!-- Style CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+  
+</head>
+
+{% include 'navbar.html' %}
+
+
+	<div id="" class="container-fluid">
+	<section class="">
+		<div id="">
+         <div data-ride="carousel" class="carousel slide" id="myCarousel">
+      <!-- Indicators -->
+    
+      <div class="carousel-inner">
+        <div class="item next left">
+          <img alt="First slide"  src="{% static 'img/hardware' %}.jpg">
+			<div class="carousel-caption">
+				<h1><span style="color: #34a853"></span>Hardware</h1>
+              
+              <p><a role="button" href="/hardware" class="btn btn-lg btn-primary"> View Details <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></p>
+            </div>
+        </div>
+        <div class="item">
+           <img alt="First slide"  src="{% static 'img/accessories.jpg' %}">
+          <div class="carousel-caption">
+              <h1><span style="color: #34a853"></span>Accessories</h1>
+              
+              <p>
+              <a role="button" href="/accessories" class="btn btn-lg btn-primary"> View Details  <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+              <br />
+              </p>
+          </div>
+        </div>
+        <div class="item active left">
+           <img alt="First slide"  src="{% static 'img/av-eng.jpg' %}">
+           <div class="carousel-caption">
+              <h1><span style="color: #34a853"></span> AV Eng</h1>
+              <p><a role="button" href="/aveng" class="btn btn-lg btn-primary"> View Details <i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a></p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      
+    </div>
+             
+        </div><!-- slider-wrapper -->          
+    </section><!-- end section-slider -->
+	</div>
+    <div id="" class="clearfix"></div>
+
+	</div><!-- end container -->
+    <!-- end section-whitebg -->
+<section>
+<div class="row">
+<div class="container"></div>                   
+</div>                    
+</section><!-- end section-copyright -->
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+
+
+
+	<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+	<script>
+	jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+	</script>
+	<script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+			jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+			
+			
+	 jQuery('.min_range').on('change', function(){
+		  
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+    <script>With JQuery
+$('#ex1').slider({
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+	formatter: function(value) {
+		return 'Current value: ' + value;
+	}
+});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+
+
+</body></html>

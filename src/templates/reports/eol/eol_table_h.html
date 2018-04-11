@@ -1,0 +1,287 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- <title>Suhasini Textile Agency</title> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <!-- Style CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+   <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<style>
+  input {padding-left:4px;  padding-right:14px; padding-top:0; border:none; outline:none; width:100%; margin-bottom: 10px; }
+  select {    padding-left: 4px;
+    padding-right: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    width:100%;
+    margin-bottom: 10px; }
+  
+  label{display: none !important;}
+  
+
+  table .dataframe, .dataframe thead tr th{
+    border: none;
+    
+    border-collapse: collapse;
+    text-align:center !important;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 14px;
+  }
+  table .dataframe, .dataframe thead{
+    border: 1px solid #cccccc;
+    
+    border-collapse: collapse;
+    text-align:center !important;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 0.9em;
+  }
+
+  table .dataframe, .dataframe tbody tr th {
+    border: 1px solid #cccccc;
+    
+    border-collapse: collapse;
+    text-align:center !important;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 0.9em;
+  }
+
+  table .dataframe, .dataframe tbody tr td {
+    border: 1px solid #cccccc;
+    
+    border-collapse: collapse;
+    text-align:center !important;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 0.9em;
+  }
+
+  .male th {
+      background-color: #a5dcf6;
+      color: white;
+    text-align:center;
+  }
+
+  .female th {
+      background-color: #a5dcf6;
+      color: white;
+    text-align:center;
+  }
+
+  tr:nth-child(odd)   { background-color:#ffffff;text-align:center; }
+  tr:nth-child(even)  { background-color:#ffffff; text-align:center;}
+  .table>thead>tr>th {
+    vertical-align:bottom;
+    border: none !important;
+     font-size: 13px;
+    
+  }
+  #myTable th, #myTable td {
+    text-align:center;
+   background-color:#ffffff !important;
+    font-size: 13px;
+  }
+  </style>
+  
+  
+  
+
+  
+    
+  <script type="text/javascript">
+  $(document).ready(function() {
+  $('#example').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+      'csv', 'excel' 
+    ]
+  } );
+} );
+  </script>
+  
+  
+</head>
+
+
+<body>  
+  {% include 'navbar.html' %}
+  
+
+<section>
+<div class="row">
+<div class="container">
+  <div class="col-lg-2 col-md-2 col-sm-2"></div>
+  
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12"><br><br>
+          <h3> End of Life (EoL) Report</h3></div> 
+        <div class="col-lg-6 col-md-6 col-sm-12">
+        
+        </div>
+      </div>
+      
+   
+<div class="row">
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered order-table" id="customers">
+
+                {{ html_table | safe}}
+        </table>
+    
+    
+  <div class="col-lg-2 col-md-2 col-sm-2"></div>
+     
+  </div>
+  
+  </div></section> 
+
+  <section>
+    
+  <div class="row">
+    <div class="col-lg-1 col-md-1 col-sm-12"></div>
+ <div class="col-lg-10 col-md-10 col-sm-12">
+  <br><br><br>
+  <div id="table-scroll">
+  
+<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered order-table" id="example">
+<thead>
+            <tr>
+            <th> Month of Entry </th>
+            <th> Date of Entry </th>
+            <th class="name">Product Name </th>
+            <th class="category">Product Category</th>
+            <th class="type"> Type </th>
+            <th class="type"> Specifications </th>
+            <th class="type"> RAM</th>
+            <th class="type"> Hard Disk Storage</th>
+            <th class="type"> OS</th>
+            <th class="type">Processor </th>
+            <th class="type"> Touch Screen Type</th>
+            <th class="type">Screen Size </th>
+            <th class="type">Screen Border </th>
+            
+            <th class="warranty">Warranty</th>
+            <th class="warrantyperiod">Warranty Period (Months)</th>
+            <th class="suppliername">Supplier Name</th>
+            <th class="suppliertype">Supplier Type</th>
+            <th class="partnumber">Part Number</th>
+            <th class="upc">UPC</th>
+            <th class="sku">SKU</th>
+            <th class="region">Region</th>
+            <th class="country">Country</th>
+            <th class="country">Currency</th>
+            <th class="totalprice">Total Price</th>
+            <th class="eolstatus">EoL Status</th>
+            <th class="eoldate">EOL Date</th>
+            <th class="previousmpn">Previous MPN</th>
+            <th class="previous-models">Previous Models/ Part numbers</th>
+            <th class="specialinstruction">Special Instructions </th>
+           
+           
+         
+            </tr>
+        </thead>
+        <tbody id="myTable">
+                  {% for qs in q %}
+                {% if not qs.test %}
+                  <tr> 
+                  
+                  <td>{{qs.MonthofEntry}}</td>
+                  <td>{{qs.DateofEntry}}</td>
+                  <td>{{qs.ProductName}}</td>
+                  <td>{{qs.ProductCategory}}</td>
+                  <td>{{qs.ProductType}}</td>
+                  <td>{{qs.Specifications}}</td>
+                  <td>{{qs.RAM}}</td>
+                  <td>{{qs.HardDiskStorage}}</td>
+                  <td>{{qs.OS}}</td>
+                  <td>{{qs.Processor}}</td>
+                  <td>{{qs.TouchScreen}}</td>
+                  <td>{{qs.ScreenSize}}</td>
+                  <td>{{qs.ScreenBorder}}</td>
+                  <td>{{qs.Warranty}}</td>
+                  <td>{{qs.WarrantyPeriod}}</td>
+                  <td>{{qs.Supplier}}</td>
+                  <td>{{qs.SupplierType}}</td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.Partnumber }}</u></a></td>
+                  <td>{{qs.UPC}}</td>
+                  <td>{{qs.SKU}}</td>
+                  <td>{{qs.Region}}</td>
+                  <td>{{qs.Country}}</td>
+                  <td>{{qs.Currency}}</td>
+                  <td>{{qs.TotalPrice}}</td>
+                  <td>{{qs.EoLStatus}}</td>
+                  <td>{{qs.EolDate}}</td>
+                  <td>{{qs.PreviousMPN}}</td>
+                  <td>{{qs.PreviousPartNumber}}</td>
+                  <td>{{qs.SplInstructions}}</td>
+                  
+                  
+                 
+                </tr>
+             {% endif %}
+                {% endfor %}
+        </tbody>
+        </table>
+</div>
+    </div></div>  
+    <div class="col-lg-1 col-md-1 col-sm-12"></div>
+  </section>                  
+<!-- end section-copyright -->
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  <script type="text/javascript" src="{% static 'js/site.js' %}"></script>
+  <script type="text/javascript" language="javascript" src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+  <script type="text/javascript" language="javascript" src="{% static 'js/jszip.min.js' %}"></script>
+  <script type="text/javascript" language="javascript" src="{% static 'js/buttons.html5.min.js' %}"></script>
+  
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+
+
+
+
+</body></html>

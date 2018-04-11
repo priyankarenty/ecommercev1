@@ -1,0 +1,267 @@
+{% load static %}
+
+<body>
+ <div class="container-fluid">
+  <div id="" class="topbar">
+    <section class="section-copyright1 dm-shadow">
+      
+             <div id="" class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+        
+
+            </div><!-- end col-lg-6 -->
+           <div id="" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-right">
+           
+              <a href="#"><i class="fa fa-th" aria-hidden="true" style="font-size:22px"></i></a>&nbsp;&nbsp;
+<a href="#"><i class="fa fa-bell" aria-hidden="true" style="font-size:22px"></i></a>&nbsp;&nbsp;
+<a href="#"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:22px"></i></a>
+        </div><!-- end container -->
+    
+    </section>
+    </div><!-- end topbar -->
+
+  
+   <nav class="navbar navbar-inverse">
+  
+    
+    <div class="row">
+      
+        <div class="col-md-4 logo1"><a href="/#"><img src="{% static 'img/logo.png' %}"></a></div>
+        <div class="col-md-4 "></div>
+        <div class="col-md-4">
+         
+    <form method='GET' action='{% url "search:query" %}' class="form my-2 my-lg-0">
+ <div class='input-group'>
+   <input class="form-control" type="text" placeholder="Search" name='q' aria-label="Search" value='{{ request.GET.q }}'>
+   <span class='input-group-btn'>
+       <button class="btn btn-outline-success" type="submit">Search</button>
+   </span>
+   </div>
+</form>
+    
+    
+    </div>
+  
+      
+    </div>
+ 
+</nav>
+  </div>
+  
+   <header class="header-wrapper menu">
+     <div class="container-fluid">
+     <div class="row">
+     <div class="wsmenucontainer clearfix">
+  <div class="overlapblackbg"></div>
+  <div class="wsmobileheader clearfix"> <a id="wsnavtoggle" class="animated-arrow "><span></span></a> <a class="smallogo"></a> <a class="callusicon"></a> </div>
+      <div class="">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+    <!--Main Menu HTML Code-->
+         <nav class="wsmenu clearfix">
+        <ul class="mobile-sub wsmenu-list">
+         
+        <li><a href="/hardware" >Hardware Catalog<b class="caret"></b></a>
+            <ul class="wsmenu-submenu">
+              
+              
+              <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="/desktop">Desktop <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/desktop_amti">AMTI</a></li>
+          <li><a tabindex="-1" href="/desktop_apple">Apple</a></li>
+          <li><a tabindex="-1" href="/desktop_arkphire">Arkphire</a></li>
+          <li><a tabindex="-1" href="/desktop_cdw">CDW</a></li>
+          <li><a tabindex="-1" href="/desktop_dell">Dell</a></li>
+          <li><a tabindex="-1" href="/desktop_hp">HP</a></li>
+          <li><a tabindex="-1" href="/desktop_lenovo">Lenovo</a></li>
+          <li><a tabindex="-1" href="/desktop_zones">Zones</a></li>
+        </ul>
+        </li>
+      
+              <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="/laptop">Laptop <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/laptop_amti">AMTI</a></li>
+          <li><a tabindex="-1" href="/laptop_apple">Apple</a></li>
+          <li><a tabindex="-1" href="/laptop_arkphire">Arkphire</a></li>
+          <li><a tabindex="-1" href="/laptop_cdw">CDW</a></li>
+          <li><a tabindex="-1" href="/laptop_dell">Dell</a></li>
+          <li><a tabindex="-1" href="/laptop_hp">HP</a></li>
+          <li><a tabindex="-1" href="/laptop_lenovo">Lenovo</a></li>
+          <li><a tabindex="-1" href="/laptop_zones">Zones</a></li>
+        </ul>
+        </li>
+              <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="/monitor">Monitor <b class="right-caret" style="margin:8px 0 0 5px;"></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/monitor_amti">AMTI</a></li>
+          <li><a tabindex="-1" href="/monitor_apple">Apple</a></li>
+          <li><a tabindex="-1" href="/monitor_arkphire">Arkphire</a></li>
+          <li><a tabindex="-1" href="/monitor_cdw">CDW</a></li>
+          <li><a tabindex="-1" href="/monitor_dell">Dell</a></li>
+          <li><a tabindex="-1" href="/monitor_hp">HP</a></li>
+          <li><a tabindex="-1" href="/monitor_lenovo">Lenovo</a></li>
+          <li><a tabindex="-1" href="/monitor_zones">Zones</a></li>
+        </ul>
+        </li>
+              
+            </ul>
+          </li>
+        
+        
+         <li><a href="/accessories">Accessory Catalog<b class="caret"></b></a>
+            <ul class="wsmenu-submenu">
+              
+              <li><a href="/audio">Audio</a></li>
+              <li><a href="/power">Power </a></li>
+              <li><a href="/memory">Memory </a></li>
+              <li><a href="/cable">Cable </a></li>
+              <li><a href="/dock">Dock </a></li>
+              <li><a href="/phone">Phone </a></li>
+              <li><a href="/mouse">Mouse </a></li>
+              <li><a href="/privacyfilter">PrivacyFilter </a></li>
+              <li><a href="/graphic">Graphic </a></li>
+              <li><a href="/keyboard">Keyboard </a></li>
+              <li><a href="/camera_acc">Camera </a></li>
+              <li><a href="/sleeve">Sleeve </a></li>
+              <li><a href="/drive">Drive </a></li>
+              <li><a href="/miscacc">Misc </a></li>
+
+              
+            </ul>
+            
+          </li>
+          
+          <li><a href="/aveng">AV Eng Catalog<b class="caret"></b></a>
+            <ul class="wsmenu-submenu">
+              
+              <li><a href="/display">Display</a></li>
+              <li><a href="/re">Rack Equipment</a></li>
+              <li><a href="/rack">Rack</a></li>
+              <li><a href="/cp">Connection Panels</a></li>
+              <li><a href="/connector">Connector</a></li>
+              <li><a href="/video">Video</a></li>
+              <li><a href="/ee">Enclosure Equipment</a></li>
+              <li><a href="/projector">Projector</a></li>
+              <li><a href="/camera_aveng">Camera</a></li>
+              <li><a href="/control">Control</a></li>
+              <li><a href="/cs">Ceiling Speaker</a></li>
+              <li><a href="/wm">Wireless Mics</a></li>
+              <li><a href="/codec">Codec</a></li>
+              <li><a href="/sre">Standard Room Equipment</a></li>
+              <li><a href="/miscaveng">Misc</a></li>
+              </ul>
+          </li>
+      
+             <li><a href="#">Suppliers <b class="caret"></b></a>
+            <ul class="wsmenu-submenu">
+            <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Hardware Suppliers <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/hardware_oem">OEM</a></li>
+          <li><a tabindex="-1" href="/hardware_var">VAR</a></li>
+          
+          </ul>
+              
+              </li>
+             <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Accessory Suppliers <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+           <li><a tabindex="-1" href="/accessory_oem">OEM</a></li>
+          <li><a tabindex="-1" href="/accessory_var">VAR</a></li>
+          </ul>
+              
+              </li>
+              <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">AV Eng Suppliers <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/aveng_oem">OEM</a></li>
+          <li><a tabindex="-1" href="/aveng_var">VAR</a></li>
+          </ul>
+              
+              </li>
+            </ul>
+            
+         
+            
+          </li>
+  
+         
+           
+            <li class="lastbut"><a href="/admin">Admin</a></li>
+             <li><a href="/usermanual">Help </a>
+        
+          </li>
+          <li ><a href="#" >Dashboard <b class="caret"></b></a>
+           <ul class="wsmenu-submenu">
+              <li><a href="/price/">Price Fluctuation Trend</a></li>
+              <li><a href="/mis/">Data Upload Trend</a></li>
+              <li><a href="/stock/">Stock LeadTime Trend</a></li>
+              
+              </ul></li> 
+              
+              <li ><a href="#" >Reports <b class="caret"></b></a>
+           <ul class="wsmenu-submenu">
+              <li><a href="/duplicates_form/">Duplicate Records Report</a></li>
+              <li><a href="/eol_form/">EoL Products Report</a></li>
+              <li><a href="/lta_form/">Lead Time and Availability Report</a></li>
+              <li><a href="/npa_form/">New Products Added Report</a></li>
+              <li><a href="/pv_form/">Price Variance Report</a></li>
+              <li><a href="/pa_form/">Price Approval Report</a></li>
+              <li><a href="/mi_form/">Missing Info Report</a></li>
+             <li ><a href="/admin/report_builder/report/"><span><em>Custom Reports</em></span> &nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true" style="padding-left: 12px;"></i></a></li>
+              
+
+             
+              </ul></li> 
+
+
+              
+          <li><a href="#">Catalog <img src="{% static 'img/download.png' %}"> </a>
+        <ul class="wsmenu-submenu">
+            <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Hardware Catalog <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/export_hardware_csv">csv</a></li>
+          <li><a tabindex="-1" href="/export_hardware_xlsx">xls</a></li>
+          
+          </ul>
+              
+              </li>
+             <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">Accessory Suppliers <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/export_accessory_csv">csv</a></li>
+          <li><a tabindex="-1" href="/export_accessory_xlsx">xls</a></li>
+          
+          </ul>
+              
+              </li>
+              <li class="dropdown-submenu"><a class="test" tabindex="-1" href="#">AV Eng Suppliers <b class="right-caret" style="margin:8px 0 0 5px; "></b></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="/export_aveng_csv">csv</a></li>
+          <li><a tabindex="-1" href="/export_aveng_xlsx">xls</a></li>
+          
+          </ul>
+              
+              </li>
+            </ul>
+              
+           
+            
+           
+        
+     
+        </ul>
+      </nav>
+         
+    <!--Menu HTML Code--> 
+ 
+  
+  
+  
+</div>
+       </div> </div></div>
+   
+   </div>
+   
+   
+   
+    
+  
+  </header>
+</body></html>

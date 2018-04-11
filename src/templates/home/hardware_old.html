@@ -1,0 +1,540 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- <title>Suhasini Textile Agency</title> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <!-- Style CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+   <link href="{% static 'css/style-main.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+
+<script type="text/javascript">
+  
+  var $filterCheckboxes = $('input[type="checkbox"]');
+$filterCheckboxes.on('change', function() {
+  var selectedFilters = {};
+
+  $filterCheckboxes.filter(':checked').each(function() {
+    if (!selectedFilters.hasOwnProperty(this.name)) {
+      selectedFilters[this.name] = [];
+    }
+    selectedFilters[this.name].push(this.value);
+  });
+  // create a collection containing all of the filterable elements
+  var $filteredResults = $('.flower');
+  // loop over the selected filter name -> (array) values pairs
+  $.each(selectedFilters, function(name, filterValues) {
+    // filter each .flower element
+    $filteredResults = $filteredResults.filter(function() {
+       var matched = false,
+        currentFilterValues = $(this).data('category').split(' ');
+      // loop over each category value in the current .flower's data-category
+      $.each(currentFilterValues, function(_, currentFilterValue) {
+        // if the current category exists in the selected filters array
+        // set matched to true, and stop looping. as we're ORing in each
+        // set of filters, we only need to match once
+        if ($.inArray(currentFilterValue, filterValues) != -1) {
+          matched = true;
+          return false;
+        }
+      });
+      // if matched is true the current .flower element is returned
+      return matched;
+    });
+  });
+  $('.flower').hide().filter($filteredResults).show();
+});
+</script>
+</head>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#customers tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+ });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'navbar.html' %}
+
+ <body>  
+   
+<section>
+<div class="row">
+<div class="container-fluid">
+    <div class="col-lg-2 col-md-2 col-sm-2 form scrollbar" id="style-15"><form action="#" id="leftsearchfrm" method="post" accept-charset="utf-8">
+    
+<input type="hidden" name="area" value="">
+
+<input type="hidden" name="price" value="">
+
+<input type="hidden" name="district_id" value="">
+
+<input type="hidden" name="keyword" value="">
+
+<div class="p10">
+  
+<p class="mt20"><h5>FILTER BY <span style="font-size: 12px; color:#686767 ">&nbsp;&nbsp;View all</span> </h5></p>
+
+<p><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Products"></p>
+<p class="ttu">Price Range</p>
+<p class="mt10">
+
+<select name="" rel="currency" class="currency" id= "currency">
+  <option value="Currency" selected="selected">Currency</option>
+  <option value="USD" id="USD" rel="currency" class="currency" name = "currency">USD</option>
+  <option value="EUR" rel="currency" class="currency" name = "currency" >EUR</option>
+  <option value="GBP" rel="currency" class="currency"  name = "currency" >GBP</option>
+  <option value="DZD" rel="currency" class="currency" name = "currency" >DZD</option>
+  <option value="ARP" rel="currency" class="currency"  name = "currency" >ARP</option>
+  <option value="AUD" rel="currency" class="currency"  name = "currency" >AUD</option>
+  <option value="ATS" rel="currency" class="currency"  name = "currency" >ATS</option>
+  <option value="BSD" rel="currency" class="currency" name = "currency">BSD</option>
+  <option value="BBD" rel="currency" class="currency" name = "currency">BBD</option>
+  <option value="BEF" rel="currency" class="currency" name = "currency">BEF</option>
+  <option value="BMD" rel="currency" class="currency" name = "currency">BMD</option>
+  <option value="BRR" rel="currency" class="currency" name = "currency">BRR</option>
+  <option value="BGL" rel="currency" class="currency" name = "currency">BGL</option>
+  <option value="CAD" rel="currency" class="currency" name = "currency">CAD</option>
+  <option value="CLP" rel="currency" class="currency" name = "currency">CLP</option>
+  <option value="CNY" rel="currency" class="currency" name = "currency">CNY</option>
+  <option value="CYP" rel="currency" class="currency" name = "currency">CYP</option>
+  <option value="CSK" rel="currency" class="currency" name = "currency">CSK</option>
+  <option value="DKK" rel="currency" class="currency" name = "currency">DKKr</option>
+  <option value="NLG" rel="currency" class="currency" name = "currency">NLG</option>
+  <option value="XCD" rel="currency" class="currency" name = "currency">XCD</option>
+  <option value="EGP" rel="currency" class="currency" name = "currency">EGP</option>
+  <option value="FJD" rel="currency" class="currency" name = "currency">FJD</option>
+  <option value="FIM" rel="currency" class="currency" name = "currency">FIM</option>
+  <option value="FRF" rel="currency" class="currency" name = "currency">FRF</option>
+  <option value="DEM" rel="currency" class="currency" name = "currency"> DEM</option>
+  <option value="XAU" rel="currency" class="currency" name = "currency" >XAU</option>
+  <option value="GRD" rel="currency" class="currency" name = "currency" >GRD</option>
+  <option value="HKD" rel="currency" class="currency" name = "currency" >HKD</option>
+  <option value="HUF" rel="currency" class="currency" name = "currency" >HUF</option>
+  <option value="ISK" rel="currency" class="currency" name = "currency" >ISK</option>
+  <option value="INR" rel="currency" class="currency" name = "currency" >INR</option>
+  <option value="IDR" rel="currency" class="currency" name = "currency" >IDR</option>
+  <option value="IEP" rel="currency" class="currency" name = "currency" >IEP</option>
+  <option value="ILS" rel="currency" class="currency" name = "currency" >ILS</option>
+  <option value="ITL" rel="currency" class="currency" name = "currency" >ITL</option>
+  <option value="JMD" rel="currency" class="currency" name = "currency" >JMD</option>
+  <option value="JPY" rel="currency" class="currency" name = "currency" >JPY</option>
+  <option value="JOD" rel="currency" class="currency" name = "currency" >JOD</option>
+  <option value="KRW" rel="currency" class="currency" name = "currency" >KRW</option>
+  <option value="LBP" rel="currency" class="currency" name = "currency" >LBPs</option>
+  <option value="LUF" rel="currency" class="currency" name = "currency" >LUF</option>
+  <option value="MYR" rel="currency" class="currency" name = "currency" >MYR</option>
+  <option value="MXP" rel="currency" class="currency" name = "currency" >MXP</option>
+  <option value="NLG" rel="currency" class="currency" name = "currency" >NLG</option>
+  <option value="NZD" rel="currency" class="currency" name = "currency" >NZD</option>
+  <option value="NOK" rel="currency" class="currency" name = "currency" >NOK</option>
+  <option value="PKR" rel="currency" class="currency" name = "currency" >PKR</option>
+  <option value="XPD" rel="currency" class="currency" name = "currency" >XPD</option>
+  <option value="PHP" rel="currency" class="currency" name = "currency" >PHP</option>
+  <option value="XPT" rel="currency" class="currency" name = "currency" >XPT</option>
+  <option value="PLZ" rel="currency" class="currency" name = "currency" >PLZ</option>
+  <option value="PTE" rel="currency" class="currency" name = "currency" >PTE</option>
+  <option value="ROL" rel="currency" class="currency" name = "currency" >ROL</option>
+  <option value="RUR" rel="currency" class="currency" name = "currency" >RUR</option>
+  <option value="SAR" rel="currency" class="currency" name = "currency" >SAR</option>
+  <option value="SGD" rel="currency" class="currency" name = "currency" >SGD</option>
+  <option value="SKK" rel="currency" class="currency" name = "currency" >SKK</option>
+  <option value="ZAR" rel="currency" class="currency" name = "currency" >ZAR</option>
+  <option value="KRW" rel="currency" class="currency" name = "currency" >KRW</option>
+  <option value="ESP" rel="currency" class="currency" name = "currency" >ESP</option>
+  <option value="SDD" rel="currency" class="currency" name = "currency" >SDD</option>
+  <option value="SEK" rel="currency" class="currency" name = "currency" >SEK</option>
+  <option value="CHF" rel="currency" class="currency" name = "currency" >CHF</option>
+  <option value="TWD" rel="currency" class="currency" name = "currency" >TWD</option>
+  <option value="THB" rel="currency" class="currency" name = "currency" >THB</option>
+  <option value="TTD" rel="currency" class="currency" name = "currency" >TTD</option>
+  <option value="TRL" rel="currency" class="currency" name = "currency" >TRL</option>
+  <option value="VEB" rel="currency" class="currency" name = "currency" >VEB</option>
+  <option value="ZMK" rel="currency" class="currency" name = "currency" >ZMK</option>
+  <option value="XCD" rel="currency" class="currency" name = "currency" >XCD</option>
+  <option value="XDR" rel="currency" class="currency" name = "currency" >XDR</option>
+  <option value="XAG" rel="currency" class="currency" name = "currency" >XAG</option>
+  <option value="XPD" rel="currency" class="currency" name = "currency" >XPD</option>
+</select>
+<input type="number" id="number" placeholder="Max" id="maxPrice" value="maxPrice" style="float: right">
+ <input id="number" type="number" placeholder="Min" id="minPrice" value="minPrice" style="float: right">
+
+</p>
+      
+   
+    <a href="#demo2" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu" name="supplier" >SUPPLIER <i class="fa fa-angle-down" rel="supplier"></i></a>
+    <div class="collapse list-group-submenu" id="demo2">
+
+     <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="AMTI" id="AMTI"  rel="AMTI" class="supplier">&nbsp; AMTI
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Apple" id="Apple"  rel="Apple" class="supplier" >&nbsp; Apple&nbsp;
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Arkphire" id="Arkphire" rel="supplier" class="supplier">&nbsp; Arkphire&nbsp;
+     <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="CDW" id="CDW" rel="supplier" class="supplier">&nbsp; CDW&nbsp;
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Dell" id="Dell" rel="supplier" class="supplier">&nbsp; Dell&nbsp;
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="HP" id="HP" rel="supplier" class="supplier">&nbsp; HP</a>
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Lenovo" id="Lenovo" rel="supplier" class="supplier">&nbsp; Lenovo</a>
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Zones" id="Zones" rel="supplier" class="supplier">&nbsp; Zones</a>
+
+        </div>
+        <div class="list-group panel">
+    <a href="#demo1" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu" style="text-transform: uppercase;">REGION <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu " id="demo1">
+      <a href="#" class="list-group-item"><input type="checkbox" id="APAC" rel="region" class="region" value="APAC">&nbsp; APAC</a>
+      <a href="#" class="list-group-item"><input type="checkbox" id="EMEA" rel="region" class="region" value="EMEA">&nbsp; EMEA</a>
+      <a href="#" class="list-group-item"><input type="checkbox" id="NAMER" rel="region" class="region" value="NAMER">&nbsp; NAMER</a>
+      <a href="#" class="list-group-item"><input type="checkbox" id="MTV" rel="region" class="region" value="MTV">&nbsp; MTV</a>
+      <a href="#" class="list-group-item"><input type="checkbox" id="LATAM" rel="region" class="region" value="LATAM">&nbsp; LATAM</a>
+    </div>
+    <a href="#demo8" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">SCREEN SIZE <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo8">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="Up to 9.9 inch" value="Up to 9.9 inch">&nbsp; Up to 9.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="10 - 10.9 inch" value="10 - 10.9 inch">&nbsp; 10 - 10.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="11 - 11.9 inch" value="11 - 11.9 inch">&nbsp; 11 - 11.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="12 - 12.9 inch" value="12 - 12.9 inch">&nbsp; 12 - 12.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="13 - 13.9 inch" value="13 - 13.9 inch">&nbsp; 13 - 13.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="14 - 14.9 inch" value="Up to 9.9 inch">&nbsp; 14 - 14.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="15 - 15.9 inch" value="Up to 9.9 inch">&nbsp; 15 - 15.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="16 - 16.9 inch" value="Up to 9.9 inch">&nbsp; 16 - 16.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="17 - 17.9 inch" value="Up to 9.9 inch">&nbsp; 17 - 17.9 inch</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="screensize" class="screensize" id="18 inches or higher" value="Up to 9.9 inch">&nbsp; 18 inches or higher</a>
+
+        </div>
+         <a href="#demo6" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">O S <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo6">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Windows 10" value="Windows 10">&nbsp; Windows 10</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="DOS" value="DOS">&nbsp; DOS</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Linux" value="Linux">&nbsp; Linux</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Mac OS"" value="Mac OS">&nbsp; Mac OS</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Windows 8.1" value="Windows 8.1">&nbsp; Windows 8.1</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Windows 8" value="Windows 8">&nbsp; Windows 8</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Windows 7" value="Windows 7">&nbsp; Windows 7</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="os" class="os" id="Chrome" value="Chrome">&nbsp; Chrome</a>
+      
+    </div>
+    <a href="#demo4" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">RAM<i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu " id="demo4">
+     <div class="scrollbar1" id="style-4">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="Upto 2 GB" value="Upto 2 GB">&nbsp; Upto 2 GB </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="3 GB" value="3 GB">&nbsp; 3 GB</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="4 GB" value="4 GB">&nbsp; 4 GB</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="6 GB" value="6 GB">&nbsp; 6 GB</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="8 GB" value="8 GB">&nbsp; 8 GB</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="12 GB" value="12 GB">&nbsp; 12 GB</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="ram" class="ram" id="16 GB and above" value="16 GB and above">&nbsp; 16 GB and above</a>
+    </div>
+    </div>
+    <a href="#demo5" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">HARD DISK STORAGE <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo5">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="harddisk" class="harddisk" id="< 500 GB" value="< 500 GB">&nbsp; < 500 GB </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="harddisk" class="harddisk" id="501 GB - 1 TB" value="501 GB - 1 TB">&nbsp; 501 GB - 1 TB </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="harddisk" class="harddisk" id="1.1 TB - 2TB" value="1.1 TB - 2TB">&nbsp; 1.1 TB - 2TB </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="harddisk" class="harddisk" id="> 2TB" value="> 2TB">&nbsp; > 2TB </a>
+      
+    </div>
+    
+   
+    
+    <a href="#demo7" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">PROCESSOR <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo7">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Core i3" value="Intel Core i3">&nbsp; Intel Core i3 </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Core i5" value="Intel Core i5">&nbsp; Intel Core i5 </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Core Pentium" value="Intel Core Pentium">&nbsp; Intel Core Pentium</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Core Celeron" value="Intel Core Celeron">&nbsp; Intel Core Celeron </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Core i7" value="Intel Core i7">&nbsp; Intel Core i7 </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="Intel Atom" value="Intel Atom">&nbsp; Intel Atom </a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="AMD A4" value="AMD A4">&nbsp; AMD A4</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="AMD A8" value="AMD A8">&nbsp; AMD A8</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="AMD Athlon" value="AMD Athlon">&nbsp; AMD Athlon</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="AMD A10" value="AMD A10">&nbsp; AMD A10</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="AMD A6" value="AMD A6">&nbsp; AMD A6</a>
+     
+      
+    </div>
+    
+    <a href="#demo11" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">Touch Screen Type <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo11">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="touchscreen" class="touchscreen" id="Resistive" value="Resistive">&nbsp; Resistive</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="touchscreen" class="touchscreen" id="Capacitive" value="Capacitive">&nbsp; Capacitive</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="touchscreen" class="touchscreen" id="SAW (Surface Acoustic Wave)" value="SAW (Surface Acoustic Wave)">&nbsp; SAW (Surface Acoustic Wave)</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="processor" class="processor" id="SAW (Surface Acoustic Wave)" value="Infrared">&nbsp; Infrared</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="touchscreen" class="touchscreen" id="Optical Imaging" value="Optical Imaging">&nbsp; Optical Imaging</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="touchscreen" class="touchscreen" id="Acoustic Pulse Recognition" value="Acoustic Pulse Recognition">&nbsp; Acoustic Pulse Recognition</a>
+        </div>
+     
+      
+    
+    <a href="#demo12" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">WARRANTY <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo12">
+      <a href="#" class="list-group-item"><input type="checkbox" rel="warranty" class="warranty" value="True" id="True">&nbsp; With Warranty</a>
+      <a href="#" class="list-group-item"><input type="checkbox" rel="warranty" class="warranty" value="False" id="False">&nbsp; Without Warranty</a>
+      
+        </div>
+        
+   
+         
+   </div>
+
+
+
+
+
+
+
+</div>
+<script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+      
+  <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+  </form>         
+    </div>
+    
+  
+    <div class="col-lg-10 col-md-10 col-sm-10">
+    <form method='POST' action="/compare/hardware/" method="post">{% csrf_token %}
+    <div class="button-group">
+        <button type="" class="btn btn-default btn-sm " value="#"><strong>Compare</strong></button>
+  </div> 
+
+  <br>
+No. of products listed: <b>{{ product_count }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Category : <b class="b-bread">{{ category }}</b>
+
+
+  <div id="table-scroll">
+  
+<table id="customers" class="blue">
+ 
+
+ <thead>
+            <tr>
+                <th class="single-checkbox"> </th>
+                <th class= "dateofupload">Date of Entry </th>
+                <th class="name">Product Name </th>
+                <th class="OEM">OEM Part Number </th>
+                <th class="VAR"> VAR Part Number </th>
+                <th class="supplier" rel=supplier>Supplier</th>
+                <th class="ScreenSize" rel=ScreenSize>ScreenSize</th>
+                 <th class="Specification">Hard Disk Storage </th>
+                
+                <th class="currency"> Currency </th>
+                <th class="totalprice">Price</th>
+                
+                <th class="stock">Available Stock</th>
+                <th class="stockleadtime">Stock Lead Time (days)</th>
+                <th class="deliveryleadtime">Delivery Lead Time (days)</th>
+                <th class="country">Country</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+           
+                {% for qs in table %}
+                {% if not qs.test %}
+                <tr> 
+                  <td><input class="single-checkbox" type="checkbox" name="chk" value="{{ qs.pk }}"></td>
+                  <td> {{ qs.DateofEntry }}</td>
+                  <td>{{ qs.ProductName }}</td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.VAR }}</u></td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.OEM }}</u></td>
+                  <td class="supplier" rel="{{ qs.Supplier }}"> {{ qs.Supplier }} </td>
+                  <td class="screensize" rel="{{ qs.ScreenSize }}"> {{ qs.ScreenSize }} </td>
+                  <td class="harddisk" rel="{{ qs.HardDiskStorage }}"> {{ qs.HardDiskStorage }} </td>
+                  <td class="currency" rel="{{ qs.Currency }}"> {{ qs.Currency }}</td>
+                  <td class="totalprice" rel="{{ qs.TotalPrice }}"> {{ qs.TotalPrice }}</td>
+                  <td> {{ qs.StockAvailable }}</td>
+                  <td> {{ qs.StockLeadTime }}</td>
+                  <td> {{ qs.DeliveryLeadTime }}</td>
+                  <td> {{ qs.Country }} </td>
+                  <td style="display:none;" class="region" rel="{{ qs.Region }}"> {{ qs.Supplier }} </td>
+                  <td style="display:none;" class="os" rel="{{ qs.OS }}"> {{ qs.OS }} </td>
+                  <td style="display:none;" class="ram" rel="{{ qs.RAM }}"> {{ qs.RAM }} </td>
+                  <td style="display:none;" class="processor" rel="{{ qs.Processor }}"> {{ qs.Processor }} </td>
+                  <td style="display:none;" class="touchscreen" rel="{{ qs.TouchScreen }}"> {{ qs.TouchScreen}} </td>
+                  <td style="display:none;" class="warranty" rel="{{ qs.Warranty }}"> {{ qs.Warranty}} </td>
+
+                </tr>
+                 
+                                
+                {% endif %}
+                {% endfor %}
+            
+            
+        </tbody>
+  </form>   
+    </table>
+</div>
+ 
+  
+    <div id="" class="clearfix"></div>
+
+                 
+</div>                    
+<!-- end section-copyright -->
+  </div></div></section>                  
+<!-- end section-copyright -->
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+  <script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+    <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+
+ <!--________ Checkbox for table, for comparison jQuery_________ -->
+<script type="text/javascript">
+  $("input[name=chk]").change(function(){
+    var max= 4;
+    if( $("input[name=chk]:checked").length == max ){
+      alert("You can only select a maximum of " + max + " checkboxes")
+        $("input[name=chk]").attr('disabled', 'disabled');
+        $("input[name=chk]:checked").removeAttr('disabled');
+    }
+    else{
+         $("input[name=chk]").removeAttr('disabled');
+
+    }
+})
+</script>
+ <!--________ Input Field search jQuery_________ -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#customers tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+ <!--________ Checkbox jQuery_________ -->
+<script type="text/javascript">
+  $("input:checkbox").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[type=checkbox]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+</script>
+
+
+
+</body></html>

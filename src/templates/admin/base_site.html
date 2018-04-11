@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | ITAM Product Catalog
+{% endblock %}
+
+{% block extrastyle %}
+
+<style>
+	#header {
+		background-color: #808080;
+		color: black;
+	}
+</style>
+{% endblock%}
+
+
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">ITAM Product Catalog</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,116 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- <title>Suhasini Textile Agency</title> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <!-- Style CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+
+  
+</head>
+
+
+
+{% include 'navbar.html' %}
+
+
+<br>
+ <div class='row'>
+            {% if query %}
+            <div class='col-12 mb-3' >
+                Results for <b>{{ query }}</b>
+                <hr/>
+            </div>
+            {% else %}
+
+            {% include 'search-form.html' %}
+
+            </div>
+            <div class='col-12'>
+                <hr>
+            </div>
+            {% endif %}
+</div>
+
+
+        <div class='row'>
+
+
+
+    
+        <div class='col'>
+
+        <div id="table-scroll">
+  
+<table id="customers">
+ 
+<thead>
+            <tr>
+                <th class="single-checkbox"> </th>
+                <th class= "dateofupload">Date of Entry </th>
+                <th class="name">Product Name </th>
+                <th class="OEM">OEM Part Number </th>
+                <th class="VAR"> VAR Part Number </th>
+                <th class="supplier">Supplier</th>
+                 <th class="Specification">Hard Disk Storage </th>
+                
+                <th class="currency"> Currency </th>
+                <th class="totalprice">Price</th>
+                
+                <th class="stock">Available Stock</th>
+                <th class="stockleadtime">Stock Lead Time (days)</th>
+                <th class="deliveryleadtime">Delivery Lead Time (days)</th>
+                <th class="country">Country</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+           
+                {% for qs in object_list %}
+                {% if not qs.test %}
+                <tr> 
+                  <td><input class="single-checkbox" type="checkbox" name="chk" value="{{ qs.pk }}"></td>
+                  <td> {{ qs.DateofEntry }}</td>
+                  <td>{{ qs.ProductName }}</td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.VAR }}</u></td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.OEM }}</u></td>
+                  <td> {{ qs.Supplier }} </td>
+                  <td> {{ qs.HardDiskStorage }} </td>
+                  <td> {{ qs.Currency }}</td>
+                  <td> {{ qs.TotalPrice }}</td>
+                  <td> {{ qs.StockAvailable }}</td>
+                  <td> {{ qs.StockLeadTime }}</td>
+                  <td> {{ qs.DeliveryLeadTime }}</td>
+                  <td> {{ qs.Country }} </td>
+
+                </tr>
+                 
+                                
+                {% endif %}
+                {% endfor %}
+            
+            
+        </tbody>
+  </form>   
+    </table>
+</div>
+       
+    
+    
+</div>

@@ -1,0 +1,596 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+   
+   
+   
+   
+   
+    
+  
+  
+ <body>  
+   
+<section>
+<div class="row">
+<div class="container-fluid">
+    <div class="col-lg-2 col-md-2 col-sm-2 form scrollbar" id="style-15"><form action="#" id="leftsearchfrm" method="post" accept-charset="utf-8">
+    
+<input type="hidden" name="area" value="">
+
+<input type="hidden" name="price" value="">
+
+<input type="hidden" name="district_id" value="">
+
+<input type="hidden" name="keyword" value="">
+
+<div class="p10">
+  
+<p class="mt20"><h5>FILTER BY <span style="font-size: 12px; color:#686767 ">&nbsp;&nbsp;View all</span> </h5></p>
+
+<p><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Products"></p>
+<p class="ttu">Price Range</p>
+<p class="mt10">
+
+<select name="">
+  <option value="Currency" selected="selected">Currency</option>
+  <option value="USD">USD</option>
+  <option value="EUR">EUR</option>
+  <option value="GBP">GBP</option>
+  <option value="DZD">DZD</option>
+  <option value="ARP">ARP</option>
+  <option value="AUD">AUD</option>
+  <option value="ATS">ATS</option>
+  <option value="BSD">BSD</option>
+  <option value="BBD">BBD</option>
+  <option value="BEF">BEF</option>
+  <option value="BMD">BMD</option>
+  <option value="BRR">BRR</option>
+  <option value="BGL">BGL</option>
+  <option value="CAD">CAD</option>
+  <option value="CLP">CLP</option>
+  <option value="CNY">CNY</option>
+  <option value="CYP">CYP</option>
+  <option value="CSK">CSK</option>
+  <option value="DKK">DKKr</option>
+  <option value="NLG">NLG</option>
+  <option value="XCD">XCD</option>
+  <option value="EGP">EGP</option>
+  <option value="FJD">FJD</option>
+  <option value="FIM">FIM</option>
+  <option value="FRF">FRF</option>
+  <option value="DEM">DEM</option>
+  <option value="XAU">XAU</option>
+  <option value="GRD">GRD</option>
+  <option value="HKD">HKD</option>
+  <option value="HUF">HUF</option>
+  <option value="ISK">ISK</option>
+  <option value="INR">INR</option>
+  <option value="IDR">IDR</option>
+  <option value="IEP">IEP</option>
+  <option value="ILS">ILS</option>
+  <option value="ITL">ITL</option>
+  <option value="JMD">JMD</option>
+  <option value="JPY">JPY</option>
+  <option value="JOD">JOD</option>
+  <option value="KRW">KRW</option>
+  <option value="LBP">LBPs</option>
+  <option value="LUF">LUF</option>
+  <option value="MYR">MYR</option>
+  <option value="MXP">MXP</option>
+  <option value="NLG">NLG</option>
+  <option value="NZD">NZD</option>
+  <option value="NOK">NOK</option>
+  <option value="PKR">PKR</option>
+  <option value="XPD">XPD</option>
+  <option value="PHP">PHP</option>
+  <option value="XPT">XPT</option>
+  <option value="PLZ">PLZ</option>
+  <option value="PTE">PTE</option>
+  <option value="ROL">ROL</option>
+  <option value="RUR">RUR</option>
+  <option value="SAR">SAR</option>
+  <option value="SGD">SGD</option>
+  <option value="SKK">SKK</option>
+  <option value="ZAR">ZAR</option>
+  <option value="KRW">KRW</option>
+  <option value="ESP">ESP</option>
+  <option value="SDD">SDD</option>
+  <option value="SEK">SEK</option>
+  <option value="CHF">CHF</option>
+  <option value="TWD">TWD</option>
+  <option value="THB">THB</option>
+  <option value="TTD">TTD</option>
+  <option value="TRL">TRL</option>
+  <option value="VEB">VEB</option>
+  <option value="ZMK">ZMK</option>
+  <option value="XCD">XCD</option>
+  <option value="XDR">XDR</option>
+  <option value="XAG">XAG</option>
+  <option value="XPD">XPD</option>
+  </select>
+<!-- ___________________________________Price Filter___________________________________ -->
+
+<p>
+ 
+ <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;  padding-bottom: 5px;">
+</p>
+
+<div id="slider-range"></div>
+
+<br>
+
+   
+    <a href="#demo2" class="list-group-item list-group-item strong" data-toggle="collapse" data-parent="#MainMenu">SUPPLIER <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu" id="demo2">
+     <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="arkphire" id="arkphire" rel="supplier" class="supplier">&nbsp; Arkphire&nbsp;
+     <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Gadgets" id="Gadgets" rel="supplier" class="supplier">&nbsp; Gadgets&nbsp;
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Gownet" id="Gownet" rel="supplier" class="supplier">&nbsp; Gownet&nbsp;
+      <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Moredirect" id="Moredirect" rel="supplier" class="supplier">&nbsp; Moredirect</a>
+       <a href="#" class="list-group-item"><input type="checkbox" name="supplier" value="Zones" id="Zones" rel="supplier" class="supplier">&nbsp; Zones</a>
+       
+        </div>
+        <div class="list-group panel">
+    <a href="#demo1" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu" style="text-transform: uppercase;">REGION <i class="fa fa-angle-down"></i></a>
+    <div class="collapse list-group-submenu " id="demo1">
+      <a href="#" class="list-group-item"><input type="checkbox">&nbsp; APAC</a>
+      <a href="#" class="list-group-item"><input type="checkbox">&nbsp; EMEA</a>
+      <a href="#" class="list-group-item"><input type="checkbox">&nbsp; LATAM</a>
+      <a href="#" class="list-group-item"><input type="checkbox">&nbsp; MTV</a>
+    </div>
+   
+         
+   </div>
+
+
+
+
+
+
+
+</div>
+<script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+      
+  <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+  </form>         
+    </div>
+    
+   <div class="col-lg-10 col-md-10 col-sm-10">
+    <form action="/compare/hardware/" method="post">{% csrf_token %}
+    <div class="button-group">
+        <button type="" class="btn btn-default btn-sm " value="#"><strong>Compare</strong></button>
+  </div> 
+
+  <br>
+No. of products listed: <b>{{ product_count }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Category : <b>{{ category }}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Product Type : <b  class="b-bread">{{ ProductType }}</b>
+
+
+  <div id="table-scroll">
+  
+<table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered order-table" id="customers">
+<thead>
+            <tr>
+        <th class="class"> </th>
+       <th> Date of Entry </th>
+        <th class="name">Product Name </th>
+        <th class="VAR"> VAR </th>
+        <th class="OEM"> OEM </th>
+        <th class="sufwe">Supplier</th>
+        <th class="ScreenSize">ScreenSize </th>
+        <th class="harddiskstorage">Hard Disk Storage </th>
+        <th class="currency"> Currency </th>
+        <th class="totalprice">Price</th>
+        <th class="stock">Available Stock</th>
+        <th class="stockleadtime">Stock Lead Time (days)</th>
+        <th class="deliveryleadtime">Delivery Lead Time (days)</th>
+        <th class="country">Country</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+             {% for qs in table %}
+                {% if not qs.test %}
+                <tr> 
+                  <td><input class="radio" type="checkbox" name="radio" value="{{ qs.pk }}"></td>
+                  <td> {{ qs.DateofEntry }}</td>
+                  <td>{{ qs.ProductName }}</td>
+          <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.VAR }}</u></a></td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.OEM }}</u></a></td>
+                  <td class="supplier" name=supplier rel="{{ qs.Supplier }}"> {{ qs.Supplier }} </td>
+                  <td class="screensize" rel="{{ qs.ScreenSize }}"> {{ qs.ScreenSize }} </td>
+                  <td class="harddisk" rel="{{ qs.HardDiskStorage }}" > {{ qs.HardDiskStorage }} </td>
+                  <td class="{{ qs.Currency }}" data-type="{{ qs.Currency }}" >{{ qs.Currency }}</td>
+                  <td class="totalprice" rel="{{ qs.TotalPrice }}"> {{ qs.TotalPrice }}</td>
+                  <td> {{ qs.StockAvailable }}</td>
+                  <td> {{ qs.StockLeadTime }}</td>
+                  <td> {{ qs.DeliveryLeadTime }}</td>
+                  <td> {{ qs.Country }} </td>
+                </tr>
+             
+              {% endif %}
+                {% endfor %}
+        </tbody>
+        </table>
+</div>
+ 
+  
+    <div id="" class="clearfix"></div>
+
+                 
+</div>   
+ 
+  
+    <div id="" class="clearfix"></div>
+
+                 
+</div>                    
+<!-- end section-copyright -->
+  </div></div></section>                  
+<!-- end section-copyright -->
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+  <script type="text/javascript" language="javascript">
+            jQuery('[id ^= "left_search"]').on('change', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      jQuery('#srch_prop_subtype_container').on('click','.left_search_prop_subtype', function() {
+               jQuery('#leftsearchfrm').submit();
+            });
+      
+      
+   jQuery('.min_range').on('change', function(){
+      
+          jQuery('.max_range option[value="'+jQuery(this).val()+'"]').prevAll('option').attr('disabled','disabled');
+      });
+      
+      jQuery('.max_range').on('change', function(){
+          jQuery('.min_range option[value="'+jQuery(this).val()+'"]').nextAll('option').attr('disabled','disabled');
+      });
+         </script>
+    <script>With JQuery
+$('#ex1').slider({
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+  formatter: function(value) {
+    return 'Current value: ' + value;
+  }
+});</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+<script type="text/javascript">
+  $("input[name=chk]").change(function(){
+    var max= 4;
+    if( $("input[name=chk]:checked").length == max ){
+      alert("You can only select a maximum of " + max + " checkboxes")
+        $("input[name=chk]").attr('disabled', 'disabled');
+        $("input[name=chk]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=chk]").removeAttr('disabled');
+
+    }
+})
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#customers tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="{% static 'js/datatables.js' %}"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('.datatable').dataTable({
+        "sPaginationType": "bs_four_button",
+        "aLengthMenu": [[25, 50, 75,100,250,500,1000, -1], [25, 50, 75,100,250,500,1000, "All"]],
+       "pageLength": 25
+      }); 
+      $('.datatable').each(function(){
+        var datatable = $(this);
+        // SEARCH - Add the placeholder for Search and Turn this into in-line form control
+        
+        // LENGTH - Inline-Form control
+        var length_sel = datatable.closest('.dataTables_wrapper').find('div[id$=_length] select');
+        length_sel.addClass('form-control input-sm');
+      });
+    });
+    </script>
+
+
+
+
+<!--________ Checkbox jQuery_________ -->
+
+
+<script type="text/javascript">
+  //REGION
+
+  $("input[name=region]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=region]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //RAM
+  $("input[name=ram]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=ram]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //HARDDISKSTORAGE
+
+  $("input[name=harddisk]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=harddisk]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+  //PROCESSOR
+$("input[name=processor]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=processor]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+//Touch Screen Type
+
+$("input[name=touchscreen]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=touchscreen]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+//OS
+
+$("input[name=os]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=os]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+  });
+
+//WARRANTY
+
+$("input[name=warranty]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=warranty]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+
+
+
+
+
+$("input[name=supplier]").click(function () {
+    var showAll = true;
+    $('#customers > #myTable > tr').each(function () {
+      $('#myTable tr').not('thead tr').hide();
+    $('input[name=supplier]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+    });
+
+
+
+
+  //SCREENSIZE
+
+$("input[name=screensize]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=screensize]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+
+//TOUCHSCREENTYPE
+
+$("input[name=touchscreen]").click(function () {
+    var showAll = true;
+    $('tr').not('.first').hide();
+    $('input[name=touchscreen]').each(function () {
+        if ($(this)[0].checked) {
+            showAll = false;
+            var status = $(this).attr('rel');
+            var value = $(this).val();            
+            $('td.' + status + '[rel="' + value + '"]').parent('tr').show();
+        }
+    });
+    if(showAll){
+        $('tr').show();
+    }
+});
+</script>
+
+
+
+
+<script>
+$(document).ready(function() {
+ $(function() {
+   $( "#slider-range, #slider-range2" ).slider({
+     range: true,
+     min: 0,
+     max: 5000000,
+     values: [ 0, 2000000 ],
+     slide: function( event, ui ) {
+       // in this function we can define what happens when a user changes the sliders
+       $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+       var table = document.getElementById("customers");
+       for (var i = 1, row; row = table.rows[i]; i++) {
+          //iterate through rows (we SKIP the first row: counter starts at 1!)
+          for (var j = 9, col; col = row.cells[j]; j++) {
+              //iterate through columns: if first column not in range: HIDE, else SHOW
+              
+              if (j == 9) {             // if first column
+                  if ($(col).html() >= ui.values[ 0 ] && $(col).html() <= ui.values[ 1 ]) {
+                      // if in interval
+                      $(row).show();
+                  } else {
+                      $(row).hide();
+                  }
+              }
+          }  
+       }          
+     }
+   });
+     
+   $( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) +
+     " - " + $( "#slider-range" ).slider( "values", 1 ) );
+ });
+});</script>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+</body></html>

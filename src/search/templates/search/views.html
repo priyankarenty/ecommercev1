@@ -1,0 +1,208 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="{% static 'css/table.css' %}" rel="stylesheet" /> -->
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+  <!-- Style CSS -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+  {% include 'navbar.html' %}
+      
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#someTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<br>
+
+{% include 'snippets/search-form.html' %}
+<br>
+{% if query %}
+<div class='col-12' >
+                Results for <b>{{ query }}</b>
+                <hr/>
+            </div>
+            {% endif %}
+<!-- &nbsp;&nbsp;No. of products listed: <b>{{ product_count }}</b> -->
+<div id="table-wrapper">
+  <div id="table-scroll">
+<table summary="test">
+  
+  <table id="someTable">
+    <thead>
+            <tr>
+                <th class="name">Product Name </th>
+                <th class="supplier">Supplier</th>
+                <th class="var">Part Number </th>
+                <th class="screensize">Screen Size</th>
+                <th class="harddisk">Hard Disk Storage </th>
+                <th class="totalprice">Price</th>
+                <th class="APAC">Region</th>
+                <th class="stock">Available Stock</th>
+                <th class="deliveryleadtime">Delivery Lead Time</th>
+                <th class="region">Region</th>
+                <th class="country">Countries</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                {% for qs in object_list %}
+                {% if not qs.test %}
+                <tr> 
+                  <td>{{ qs.name }}</td>
+                  <td> {{ qs.supplier }}</td>
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.VAR }}</a></u></td>
+                  <td> {{ qs.screensize }}</td>
+                  <td> {{ qs.harddisk }}</td>
+                  <td> {{ qs.totalprice }}</td>
+                  <td> {{ qs.APAC }}</td>
+                  <td> {{ qs.stock }}</td>
+                  <td> {{ qs.deliveryleadtime }}</td>
+                  <td> {{ qs.region }}</td>
+                  <td> {{ qs.country }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            
+        </tbody>
+    </table>
+</table>
+</div>
+</div>
+
+
+
+
+      <style>
+
+      * {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:350px;
+  overflow:auto;  
+  margin-top:20px;
+}
+#table-wrapper table {
+  width:100%;
+
+}
+#table-wrapper table * {
+  background:white;
+  color:black;
+}
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:-20px;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+</style>
+
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/webslidemenu.js' %}"></script>
+
+</body></html>

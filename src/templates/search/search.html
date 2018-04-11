@@ -1,0 +1,87 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+
+<br>
+<div class="container-fluid">
+ <div class="row">
+            {% if query %}
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                Results for <b>{{ query }}</b>
+                <hr/>
+                <br>
+            </div>
+            {% else %}
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <hr>
+            </div>
+
+            </div>
+ 
+            {% endif %}
+
+
+    
+        <div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12">
+        <div id="table-scroll">
+<table id="customers">
+<thead>
+            <tr>
+                
+                <th class= "dateofupload">Date of Entry </th>
+                <th class="name">Product Name </th>
+                <th class="supplier">Supplier</th>
+                <th class="OEM">SupplierType </th>
+                <th class="VAR"> Part Number </th>
+                
+                 <th class="Specification">Hard Disk Storage </th>
+                
+                <th class="currency"> Currency </th>
+                <th class="totalprice">Price</th>
+                
+                <th class="stock">Available Stock</th>
+                <th class="stockleadtime">Stock Lead Time (days)</th>
+                <th class="deliveryleadtime">Delivery Lead Time (days)</th>
+                <th class="country">Country</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+           
+                {% for qs in object_list %}
+                {% if not qs.test %}
+                <tr> 
+                  
+                  <td> {{ qs.DateofEntry }}</td>
+                  <td>{{ qs.ProductName }}</td>
+                  <td> {{ qs.Supplier }} </td>
+                  <td> {{ qs.SupplierType }} </td>
+                  
+                  <td> <a href="{{ qs.get_absolute_url }}"><u>{{ qs.Partnumber }}</u></td>
+                  
+                  <td> {{ qs.HardDiskStorage }} </td>
+                  <td> {{ qs.Currency }}</td>
+                  <td> {{ qs.TotalPrice }}</td>
+                  <td> {{ qs.StockAvailable }}</td>
+                  <td> {{ qs.StockLeadTime }}</td>
+                  <td> {{ qs.DeliveryLeadTime }}</td>
+                  <td> {{ qs.Country }} </td>
+
+                </tr>
+                 
+                                
+                {% endif %}
+                {% endfor %}
+            
+            
+        </tbody>
+  </form>   
+    </table>
+</div>
+       
+    
+	</div>
+</div>
+	</div>

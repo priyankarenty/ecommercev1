@@ -1,0 +1,457 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- <title>Suhasini Textile Agency</title> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+    <!-- Style CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+   <link href="{% static 'css/filter.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" type="text/css" media="all" href="{% static 'css/webslidemenu.css' %}">
+
+  
+</head>
+
+<body>  
+{% include 'navbar.html' %}
+  
+<section>
+<div class="row">
+<div class="container-fluid">
+<div class="col-lg-12 col-md-12 col-sm-12">   
+<br>
+
+
+ <div id="table-scroll">
+ 
+ <table id="customers">
+    
+   
+   <thead>
+   
+  <tr>
+                <th class="VAR"> <b>VAR Part Number </b></th>
+
+ {% for qs in table %}
+      {% if not qs.test %}
+  
+                <!-- <th class="VAR"> <b>VAR Part Number </b></th> -->
+                      <th><b> <a href="{{ qs.get_absolute_url }}">{{ qs.VAR }}</a></b></th>
+                   
+                    {% endif %}
+                {% endfor %}
+                    
+    
+
+
+                      </tr></thead>
+  <thead>
+   <tr>
+                <th class="VAR"><b>OEM Part Number</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> <b><a href="{{ qs.get_absolute_url }}">{{ qs.OEM}}</a></b></td>
+                    {% endif %}
+                {% endfor %}
+                      </tr>                    
+ <tr>
+                <th class="VAR"> <b>Product Name</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    
+                    <td> {{ qs.ProductName }}</td>
+                    {% endif %}
+                {% endfor %}
+                      </tr>
+
+
+                      <tr>
+                <th class="VAR"> <b>Product Category</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    
+                    <td> {{ qs.ProductCategory }}</td>
+                    {% endif %}
+                {% endfor %}
+                      </tr>
+
+
+                       <tr>
+                <th class="VAR"> <b>Product Type</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    
+                    <td> {{ qs.ProductType }}</td>
+                    {% endif %}
+                {% endfor %}
+                      </tr>
+
+                      <tr>
+                <th class="VAR"><b>Specifications</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.Specifications }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                    </tr>
+
+
+                    
+                    <tr>
+                <th class="VAR"><b>Warranty</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.Warranty }}</td>{% endif %}
+                {% endfor %}
+                    </tr>
+
+                    <tr>
+                <th class="VAR"><b>WarrantyPeriod</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.WarrantyPeriod }}</td>{% endif %}
+                {% endfor %}
+                    </tr>
+  <tr>
+    <th class="VAR"><b>Supplier</b> </th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.supplier }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                      </tr>
+                <th class="VAR"><b>Stock Available</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.StockAvailable }}</td>{% endif %}
+                {% endfor %}
+                    </tr>
+
+ <tr>
+                <th class="VAR"><b>Supplier Type</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.suppliertype }}</td>{% endif %}
+                {% endfor %}
+                    
+                    <tr>
+                <th class="VAR"><b>UPC</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td>{{ qs.UPC }}</td>{% endif %}
+                {% endfor %}
+                 
+
+                        
+                      </tr>
+   <tr>
+                <th class="VAR"><b>SKU</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.SKU }}</td>{% endif %}
+                {% endfor %}
+                 
+                    
+                      </tr>
+                    
+                      
+
+        <tr>        <th class="VAR"><b>Region </b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.Region }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                      </tr>
+   <tr>
+                <th class="VAR"> <b>Country</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.Country }}</td>
+                    {% endif %}
+                {% endfor %}
+                    
+                    
+                    
+                      </tr>
+
+                
+                    
+ <tr>
+                <th class="VAR"><b>Quote Validity Period (days)</b> </th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> <{{ qs.QuoteValidity }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                    </tr>
+   <tr>
+                <th class="VAR"><b>Unit of Measure</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.validityunits }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                    </tr>
+ 
+                <tr>  <th class="VAR"><b>Currency</b></th>
+                 {% for qs in table %}
+      {% if not qs.test %}
+                    <td> {{ qs.Currency }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                    </tr>
+   
+                 <tr>
+                <th class="VAR"><b>Total Price</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.TotalPrice }}</td>{% endif %}
+                {% endfor %}
+                 
+                 
+                      </tr>    
+ <tr>
+                <th class="VAR"><b>Base Price/Unit</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.BasePricePerUnit }}</td>{% endif %}
+                {% endfor %}
+                 
+                 
+                      </tr> 
+
+                      <tr>
+                <th class="VAR"><b>Mark-up Price/Unit</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.MarkupPriceperUnit }}</td>{% endif %}
+                {% endfor %}
+                 
+                 
+                          
+                      </tr>
+
+                       <tr>
+                <th class="VAR"><b>Delivery Charge/Unit</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.DeliveryChargeperunit }}</a></td>{% endif %}
+                {% endfor %}
+                 
+                    
+                                          </tr>
+   
+   
+   <tr>
+                <th class="VAR"><b>Warranty Price</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.WarrantyPrice }}</td>{% endif %}
+                {% endfor %}
+                 
+                    
+                              </tr>
+                       <tr>
+                <th class="VAR"><b>Asset Tag Price</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.AssetTagPrice }}</td>{% endif %}
+                {% endfor %}
+                 
+                    
+                              </tr>
+                     
+ <tr>
+                <th class="VAR"><b>Taxes</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 
+                    <td> {{ qs.Taxes }}</td>{% endif %}
+                {% endfor %}
+                      
+                      
+                   
+                    
+                   
+                      </tr>
+  
+   <tr>
+                <th class="VAR"><b>Recycle Fee</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 
+                    <td> {{ qs.RecycleFee }}</td>{% endif %}
+                {% endfor %}
+                      
+                      
+                   
+                    
+                   
+                      </tr>
+   <tr>
+                <th class="VAR"><b>Freight Charge</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.FreightCharge }}</td>{% endif %}
+                {% endfor %}
+                    
+                    
+                    
+                      </tr>
+   <tr>
+                <th class="VAR"><b>Any Other Fee</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.OtherFee }}</td>{% endif %}
+                {% endfor %}
+                 
+                      
+                      </tr>
+
+
+                      <tr>
+                <th class="VAR"><b>Stock Lead Time (days)</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.StockLeadTime }}</td>{% endif %}
+                {% endfor %}
+                 
+                        
+                       </tr>
+   <tr>
+                <th class="VAR"><b>Delivery Lead Time (days)</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                <td> {{ qs.DeliveryLeadTime }}</td>{% endif %}
+                {% endfor %}
+                 
+                                        
+                      </tr>
+
+                       <tr>
+                <th class="VAR"><b>EOL Status</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td>{{ qs.EoLStatus }}</td>{% endif %}
+                {% endfor %}
+                
+                 
+                      </tr>
+   <tr>
+                <th class="VAR"><b>EOL Date</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.EoLDate }}</td>
+                {% endif %}
+                {% endfor %}
+                    
+                      </tr>                    
+ <tr>
+                <th class="VAR"><b>Previous MPN</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td>{{ qs.PreviousMPN }}</td>{% endif %}
+                {% endfor %}
+                 
+                   
+                      </tr>
+   <tr>
+                <th class="VAR"><b>Previous Models/Part Numbers</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td> {{ qs.PreviousPartNumber }}</td>{% endif %}
+                {% endfor %}
+                 
+                    
+                      </tr>
+   
+   <tr>
+                <th class="VAR"><b>Special Instructions</b></th>
+                {% for qs in table %}
+      {% if not qs.test %}
+                 <td>{{ qs.SplInstructions }}</td>{% endif %}
+                {% endfor %}
+                 
+                    
+                      </tr>
+      </thead>
+       
+</table>
+
+
+</div>
+ 
+  
+    <div id="" class="clearfix"></div>
+
+</div></div></div></section>                   
+<!-- end section-copyright -->
+      
+<!-- wrapper -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+
+  
+  
+  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+  <script>
+  jQuery(document).on('click', '.mega-dropdown', function(e) {
+  e.stopPropagation()
+})
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/webslidemenu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+  $("input[name=chk]").change(function(){
+    var max= 4;
+    if( $("input[name=chk]:checked").length == max ){
+      alert("You can only select a maximum of " + max + " checkboxes")
+        $("input[name=chk]").attr('disabled', 'disabled');
+        $("input[name=chk]:checked").removeAttr('disabled');
+    }else{
+         $("input[name=chk]").removeAttr('disabled');
+
+    }
+})
+</script>
+
+
+
+</body></html>
