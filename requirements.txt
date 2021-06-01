@@ -57,7 +57,7 @@ tablib==0.12.1
 tornado==5.0.1
 unicodecsv==0.14.1
 Unidecode==1.0.22
-urllib3==1.22
+urllib3==1.26.5
 vine==1.1.4
 virtualenv==15.1.0
 xlrd==1.1.0
